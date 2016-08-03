@@ -1,0 +1,14 @@
+{
+  "name": "zip-download",
+  "version": "1.0.0",
+  "description": "button to download multiple text files ",
+  "main": "zip-download.html",
+  "keywords": [
+    "polymer",
+    "web-components"
+  ],
+  "dependencies": {
+    "js-zip": "marcus7777/js-zip#04bcc76738",
+    "polymer": "*"
+  }
+}
