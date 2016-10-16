@@ -7,7 +7,7 @@
 <dom-module id="zip-download">
   <template>
     <template is="dom-if" if="{{files}}">
-      <button on-tap="zip">{{text}}</button>
+      <button on-tap="zip"><content></content></button>
     </template>
   </template>
 </dom-module>
@@ -15,10 +15,6 @@
   Polymer({
     is: "zip-download",
     properties:{
-      text:{
-        type:String,
-        value:"download",
-      },
       name: {
         type:String,
         value:"file",
@@ -27,8 +23,8 @@
     },
     zip: function(){
       if (this.files) {
-	var zip = new JSZip()
-	var that = this
+	      var zip = new JSZip()
+	      var that = this
         function catOutFiles(value) {
           zip.file(value, that.files[value])
         }
