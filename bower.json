@@ -7,6 +7,7 @@
     "polymer",
     "web-components"
   ],
+  "license": "http://www.wtfpl.net/",
   "private": false,
   "dependencies": {
     "js-zip": "marcus7777/js-zip#04bcc76738",
