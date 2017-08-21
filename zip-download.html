@@ -1,5 +1,6 @@
 <link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="../js-zip/js-zip.html">
+/FileSaver.js/FileSaver.js
 <!--
   `<zip-download></zip-download>` button to download multiple text files 
   @demo demo.html
@@ -7,7 +8,7 @@
 <dom-module id="zip-download">
   <template>
     <template is="dom-if" if="{{files}}">
-      <button on-tap="zip"><content></content></button>
+      <button on-tap="zip"><slot></slot></button>
     </template>
   </template>
 </dom-module>
@@ -23,12 +24,13 @@
     },
     zip: function(){
       if (this.files) {
-	      var zip = new JSZip()
-	      var that = this
-        function catOutFiles(value) {
+        var zip = new JSZip()
+        var that = this
+        
+        Object.keys(this.files).forEach(function(value) {
           zip.file(value, that.files[value])
-        }
-        Object.keys(this.files).forEach(catOutFiles)
+        })
+        
         zip.generateAsync({type:"blob"})
         .then(function(content) {
           saveAs(content, that.name + ".zip")
