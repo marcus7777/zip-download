@@ -10,6 +10,6 @@
   "license": "Apache License 2.0",
   "dependencies": {
     "js-zip": "marcus7777/js-zip",
-    "polymer": "*"
-  }
+    "polymer": "#1 - 2"
+   }
 }
